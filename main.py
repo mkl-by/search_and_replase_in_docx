@@ -4,7 +4,7 @@ import os
 import win32com.client as win32
 from win32com.client import constants
 from docx import Document
-
+#  дописать ввод на ткинтер, и удаление doc файлов, сделать exe!!!!!!!!!!!!!!!!!!!!!!!
 
 def search_str(
         path_one: str,
@@ -43,14 +43,11 @@ if __name__ == '__main__':
     # конвертируем файлы doc в docx
     paths = glob('C:\\Users\\mkl\\Desktop\\*.doc', recursive=True)
     for path_one in paths:
-        print(path_one)
         save_as_docx(path_one)
-    print('--------')
+
     # изменяем информацию в файле docx
     paths = glob('C:\\Users\\mkl\\Desktop\\*.docx', recursive=True)
     for path_one in paths:
-        print(os.path.split(path_one)[1].split('.')[1])
         if os.path.split(path_one)[1].split('.')[1] == 'docx':
-
             search_str(path_one, 'Лекунович М.К.', '****')
 
