@@ -4,15 +4,18 @@ from glob import glob
 import main
 import os
 # root.withdraw()  # скрываем экземпляр
+# написать проверки на отсутствие папок и ошибки, переписать в классе
 
 
 def transform_in_docx(paths):
+    """конвертируем файлы doc в docx"""
     for path_one in paths:
         result.set(path_one)
         main.save_as_docx(path_one)
 
 
 def replace_txt(paths):
+    """изменяем информацию в файле docx"""
     for path_one in paths:
         if os.path.split(path_one)[1].split('.')[1] == 'docx':
             result.set(path_one)
@@ -20,6 +23,7 @@ def replace_txt(paths):
 
 
 def open_directory():
+    """при нажатии на кнопку открываем проводник, выбираем папку, собираем пути"""
     pat = filedialog.askdirectory()  # выбираем папку для преобразования
     paths_doc = glob(pat+'/*.doc', recursive=True)  # рекурсивно обходим папку с файлами *doc
     transform_in_docx(paths_doc)

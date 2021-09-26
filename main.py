@@ -1,11 +1,10 @@
-from glob import glob
 import re
 import os
 import win32com.client as win32
 from win32com.client import constants
 from docx import Document
-import window
-#  дописать ввод на ткинтер, и удаление doc файлов, сделать exe!!!!!!!!!!!!!!!!!!!!!!!
+
+# дописать удаление doc файлов, сделать exe!!!!!!!!!!!!!!!!!!!!!!!
 
 
 def search_str(
@@ -39,17 +38,3 @@ def save_as_docx(path_one: str) -> None:
     )
     doc.Close(False)
 
-
-if __name__ == '__main__':
-
-    """# конвертируем файлы doc в docx
-    # paths = glob('C:\\Users\\mkl\\Desktop\\*.doc', recursive=True)
-    # for path_one in paths:
-    #     save_as_docx(path_one)
-
-    # изменяем информацию в файле docx
-    # paths = glob('C:\\Users\\mkl\\Desktop\\*.docx', recursive=True)
-    # for path_one in paths:
-    #     if os.path.split(path_one)[1].split('.')[1] == 'docx':
-    #         search_str(path_one, 'Лекунович М.К.', '****')
-"""
