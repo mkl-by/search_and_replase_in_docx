@@ -14,9 +14,11 @@ class MyWind(Frame):
         self.var.set('')
         self.hit = 0
 
-        self.label1 = ttk.Label(parent, textvariable=self.var, text=self.var.get())
+        self.label1 = ttk.Label(parent, textvariable=self.var, text=self.var.get(), font=("Arial Bolt", 13))
+        self.label1.focus()
         self.label1.grid(row=0, column=0, padx=5, pady=5)
-        self.label2 = ttk.Label(parent, text='Enter the text you want to change')
+
+        self.label2 = ttk.Label(parent, text='Enter the text you want to change', font=("Arial Bolt", 15))
         self.label2.grid(row=1, column=0, padx=5, pady=5)
 
         self.entry_search = ttk.Entry(parent)  # entry search
@@ -57,7 +59,7 @@ class MyWind(Frame):
 
 if __name__ == '__main__':
     root = Tk()
-    root.geometry('200x180')
+    root.geometry('310x180')
     root.title('Transform doc in docx and replace text in documents')
     MyWind(root).grid()
     root.mainloop()
